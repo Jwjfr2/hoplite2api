@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hoplite2api"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["fastapi", "uvicorn", "httpx", "websockets>=15,<17"]
+
+[project.scripts]
+hoplite2api = "hoplite2api.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hoplite2api"]
